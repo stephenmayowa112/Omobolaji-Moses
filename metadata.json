@@ -1,0 +1,6 @@
+{
+  "name": "Omobolaji Moses Portfolio",
+  "description": "Portfolio of Omobolaji Moses, Producer and Director",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
