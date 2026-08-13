@@ -16,7 +16,7 @@ export default function Home() {
         >
           <Image
             src={project.posterImage}
-            alt={project.title}
+            alt={project.posterImage.replace('/', '')}
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 33vw"

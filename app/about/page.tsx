@@ -15,7 +15,7 @@ export default function AboutPage() {
           <div className="relative w-full aspect-[4/5] bg-neutral-100 overflow-hidden">
             <Image
               src="/omobolaji-profile.jpg"
-              alt="Omobolaji Moses"
+              alt="omobolaji-profile.jpg"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 350px"

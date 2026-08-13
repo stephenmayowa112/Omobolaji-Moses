@@ -8,7 +8,6 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
-  outputFileTracingRoot: __dirname,
   // Allow access to remote image placeholder.
   images: {
     remotePatterns: [

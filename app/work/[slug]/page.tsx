@@ -28,7 +28,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px] bg-neutral-900 overflow-hidden">
         <Image
           src={project.heroImage}
-          alt={`${project.title} banner`}
+          alt={project.heroImage.replace('/', '')}
           fill
           className="object-cover opacity-80"
           priority
@@ -44,7 +44,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <div className="relative w-full aspect-[2/3] bg-neutral-100 overflow-hidden shadow-lg">
             <Image
               src={project.posterImage}
-              alt={`${project.title} poster`}
+              alt={project.posterImage.replace('/', '')}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 35vw"
@@ -100,7 +100,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                  <div className="relative w-full aspect-video bg-neutral-100 overflow-hidden">
                   <Image
                     src={image}
-                    alt={`${project.title} gallery ${i + 1}`}
+                    alt={image.replace('/', '')}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
