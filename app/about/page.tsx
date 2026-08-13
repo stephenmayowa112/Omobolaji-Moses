@@ -14,7 +14,7 @@ export default function AboutPage() {
         <div className="w-full md:w-[350px] shrink-0">
           <div className="relative w-full aspect-[4/5] bg-neutral-100 overflow-hidden">
             <Image
-              src="https://picsum.photos/seed/omobolaji/600/750"
+              src="/omobolaji-profile.jpg"
               alt="Omobolaji Moses"
               fill
               className="object-cover"

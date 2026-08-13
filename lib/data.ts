@@ -2,8 +2,8 @@ export const projects = [
   {
     slug: 'remember-me',
     title: 'Remember Me',
-    heroImage: 'https://picsum.photos/seed/rememberme-hero/1920/600',
-    posterImage: 'https://picsum.photos/seed/rememberme-poster/800/1200',
+    heroImage: '/remember-me-hero.jpg',
+    posterImage: '/remember-me-poster.jpg',
     details: {
       Runtime: '6 minutes',
       'Release Date': '10th November 2026',
@@ -18,15 +18,15 @@ export const projects = [
       'Directed By': 'Omobolaji Peter Moses',
     },
     gallery: [
-      'https://picsum.photos/seed/rememberme-gal1/800/450',
-      'https://picsum.photos/seed/rememberme-gal2/800/450',
+      '/remember-me-gallery-1.jpg',
+      '/remember-me-gallery-2.jpg',
     ],
   },
   {
     slug: 'new-age',
     title: 'New Age',
-    heroImage: 'https://picsum.photos/seed/newage-hero/1920/600',
-    posterImage: 'https://picsum.photos/seed/newage-poster/800/1200',
+    heroImage: '/new-age-hero.jpg',
+    posterImage: '/new-age-poster.jpg',
     details: {
       Runtime: '15 minutes',
       Status: 'In Production',
@@ -41,15 +41,15 @@ export const projects = [
       'Produced By': '200+ Artists from over 30+ Countries',
     },
     gallery: [
-      'https://picsum.photos/seed/newage-gal1/800/450',
-      'https://picsum.photos/seed/newage-gal2/800/450',
+      '/new-age-gallery-1.jpg',
+      '/new-age-gallery-2.jpg',
     ],
   },
   {
     slug: 'seasonlings',
     title: 'Seasonlings',
-    heroImage: 'https://picsum.photos/seed/seasonlings-hero/1920/600',
-    posterImage: 'https://picsum.photos/seed/seasonlings-poster/800/1200',
+    heroImage: '/seasonlings-hero.jpg',
+    posterImage: '/seasonlings-poster.jpg',
     details: {
       Episodes: '7 Episodes',
       Status: 'In development',
@@ -63,15 +63,15 @@ export const projects = [
       'Directed By': 'Omobolaji Peter Moses',
     },
     gallery: [
-      'https://picsum.photos/seed/seasonlings-gal1/800/450',
-      'https://picsum.photos/seed/seasonlings-gal2/800/450',
+      '/seasonlings-teaser.jpg',
+      '/seasonlings-gallery.jpg',
     ],
   },
   {
     slug: 'thames',
     title: 'THAMES',
-    heroImage: 'https://picsum.photos/seed/thames-hero/1920/600',
-    posterImage: 'https://picsum.photos/seed/thames-poster/800/1200',
+    heroImage: '/thames-hero.jpg',
+    posterImage: '/thames-poster.jpg',
     details: {
       'Running Time': '95 minutes',
       Status: 'In development',
@@ -86,7 +86,7 @@ export const projects = [
       'Directed By': 'Omobolaji Peter Moses',
     },
     gallery: [
-      'https://picsum.photos/seed/thames-gal1/1920/800',
+      '/thames-gallery-1.jpg',
     ],
   },
 ];
