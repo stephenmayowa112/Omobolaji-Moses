@@ -14,8 +14,8 @@ export default function AboutPage() {
         <div className="w-full md:w-[350px] shrink-0">
           <div className="relative w-full aspect-[4/5] bg-neutral-100 overflow-hidden">
             <Image
-              src="/omobolaji-profile.jpg"
-              alt="omobolaji-profile.jpg"
+              src="/omobolaji-profile.png"
+              alt="omobolaji-profile.png"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 350px"
