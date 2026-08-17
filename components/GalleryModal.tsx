@@ -76,7 +76,7 @@ export default function GalleryModal({ images, title, galleryLogoImage }: Galler
           />
           {/* Gallery Logo Overlay on preview */}
           {galleryLogoImage && (
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[90%] md:w-[80%] max-w-[600px]">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-[90%] md:w-[80%] max-w-[600px] pointer-events-none">
               <Image
                 src={galleryLogoImage}
                 alt={`${title} Gallery Logo`}
@@ -87,7 +87,7 @@ export default function GalleryModal({ images, title, galleryLogoImage }: Galler
             </div>
           )}
           {/* Hover overlay with "View Gallery" */}
-          <div className="absolute inset-0 z-30 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+          <div className="absolute inset-0 z-40 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
             <span className="text-white text-lg font-semibold tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="3" width="18" height="18" rx="2" />
