@@ -52,6 +52,7 @@ export const projects = [
     title: 'Seasonlings',
     heroImage: '/images/seasonlings-hero.png',
     posterImage: '/images/seasonlings-poster.png',
+    logoImage: '/images/seasonlings-poster-banner-text.png',
     details: {
       Episodes: '7 Episodes',
       Status: 'In development',
