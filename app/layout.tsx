@@ -50,13 +50,6 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  icons: {
-    icon: [
-      { url: '/icon.png', sizes: '192x192', type: 'image/png' },
-      { url: '/favicon.ico', sizes: 'any' },
-    ],
-    apple: [{ url: '/icon.png', sizes: '180x180', type: 'image/png' }],
-  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
