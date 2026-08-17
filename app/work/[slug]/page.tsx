@@ -93,13 +93,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           />
           {/* Optional Project Logo Overlay */}
           {project.logoImage && (
-            <div className="relative z-20 w-[60%] sm:w-[50%] md:w-[40%] max-w-[500px]">
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%] max-w-[854px]">
               <Image
                 src={project.logoImage}
                 alt={`${project.title} Logo`}
-                width={800}
-                height={400}
-                className="w-full h-auto object-contain drop-shadow-2xl"
+                width={854}
+                height={192}
+                className="w-full h-auto aspect-[854/192] object-contain drop-shadow-2xl opacity-100 border-[5px] border-transparent"
                 priority
               />
             </div>
