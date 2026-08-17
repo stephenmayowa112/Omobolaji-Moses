@@ -8,16 +8,17 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="w-full flex flex-col pt-8">
-      <h1 className="text-xl tracking-wide uppercase mb-8 md:mb-12">BIO</h1>
+      <h1 className="text-xl tracking-wide uppercase mb-6 sm:mb-8 md:mb-12">BIO</h1>
       
-      <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-start">
-        <div className="w-full md:w-[350px] shrink-0">
-          <div className="relative w-full aspect-[4/5] bg-neutral-100 overflow-hidden">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 items-start">
+        <div className="w-full md:w-[280px] lg:w-[350px] shrink-0">
+          <div className="relative w-full aspect-[4/5] bg-neutral-100 overflow-hidden flex items-center justify-center p-4 text-center">
+            <span className="text-neutral-400 font-mono text-sm absolute z-0">omobolaji-profile.png</span>
             <Image
-              src="/omobolaji-profile.png"
+              src="/images/omobolaji-profile.png"
               alt="omobolaji-profile.png"
               fill
-              className="object-cover"
+              className="object-cover z-10"
               sizes="(max-width: 768px) 100vw, 350px"
               referrerPolicy="no-referrer"
             />

@@ -2,8 +2,8 @@ export const projects = [
   {
     slug: 'remember-me',
     title: 'Remember Me',
-    heroImage: '/remember-me-hero.png',
-    posterImage: '/remember-me-poster.png',
+    heroImage: '/images/remember-me-hero.png',
+    posterImage: '/images/remember-me-poster.png',
     details: {
       Runtime: '6 minutes',
       'Release Date': '10th November 2026',
@@ -18,15 +18,15 @@ export const projects = [
       'Directed By': 'Omobolaji Peter Moses',
     },
     gallery: [
-      '/remember-me-gallery-1.png',
-      '/remember-me-gallery-2.png',
+      '/images/remember-me-gallery-1.png',
+      '/images/remember-me-gallery-2.png',
     ],
   },
   {
     slug: 'new-age',
     title: 'New Age',
-    heroImage: '/new-age-hero.png',
-    posterImage: '/new-age-poster.png',
+    heroImage: '/images/new-age-hero.png',
+    posterImage: '/images/new-age-poster.png',
     details: {
       Runtime: '15 minutes',
       Status: 'In Production',
@@ -41,15 +41,15 @@ export const projects = [
       'Produced By': '200+ Artists from over 30+ Countries',
     },
     gallery: [
-      '/new-age-gallery-1.png',
-      '/new-age-gallery-2.png',
+      '/images/new-age-gallery-1.png',
+      '/images/new-age-gallery-2.png',
     ],
   },
   {
     slug: 'seasonlings',
     title: 'Seasonlings',
-    heroImage: '/seasonlings-hero.png',
-    posterImage: '/seasonlings-poster.png',
+    heroImage: '/images/seasonlings-hero.png',
+    posterImage: '/images/seasonlings-poster.png',
     details: {
       Episodes: '7 Episodes',
       Status: 'In development',
@@ -63,15 +63,15 @@ export const projects = [
       'Directed By': 'Omobolaji Peter Moses',
     },
     gallery: [
-      '/seasonlings-teaser.png',
-      '/seasonlings-gallery.png',
+      '/images/seasonlings-teaser.png',
+      '/images/seasonlings-gallery.png',
     ],
   },
   {
     slug: 'thames',
     title: 'THAMES',
-    heroImage: '/thames-hero.png',
-    posterImage: '/thames-poster.png',
+    heroImage: '/images/thames-hero.png',
+    posterImage: '/images/thames-poster.png',
     details: {
       'Running Time': '95 minutes',
       Status: 'In development',
@@ -86,7 +86,7 @@ export const projects = [
       'Directed By': 'Omobolaji Peter Moses',
     },
     gallery: [
-      '/thames-gallery-1.png',
+      '/images/thames-gallery-1.png',
     ],
   },
 ];

@@ -23,14 +23,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   }
 
   return (
-    <div className="w-full flex flex-col gap-12 md:gap-16 pb-12">
+    <div className="w-full flex flex-col gap-8 sm:gap-12 md:gap-16 pb-8 sm:pb-12">
       {/* Hero Banner */}
-      <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px] bg-neutral-900 overflow-hidden">
+      <div className="relative w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px] bg-neutral-900 overflow-hidden flex items-center justify-center p-4 text-center">
+        <span className="text-neutral-500 font-mono text-sm absolute z-0">{project.heroImage.replace('/', '')}</span>
         <Image
           src={project.heroImage}
           alt={project.heroImage.replace('/', '')}
           fill
-          className="object-cover opacity-80"
+          className="object-cover opacity-80 z-10"
           priority
           sizes="100vw"
           referrerPolicy="no-referrer"
@@ -38,15 +39,16 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         {/* We can overlay a title here if we want, but mockups just show the image with title embedded in image. We'll leave it as just image. */}
       </div>
 
-      <div className="flex flex-col md:flex-row gap-8 md:gap-16">
+      <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-12 lg:gap-16">
         {/* Poster Column */}
-        <div className="w-full md:w-[35%] shrink-0">
-          <div className="relative w-full aspect-[2/3] bg-neutral-100 overflow-hidden shadow-lg">
+        <div className="w-full md:w-[40%] lg:w-[35%] shrink-0">
+          <div className="relative w-full aspect-[2/3] bg-neutral-100 overflow-hidden shadow-lg flex items-center justify-center p-4 text-center">
+            <span className="text-neutral-400 font-mono text-sm absolute z-0">{project.posterImage.replace('/', '')}</span>
             <Image
               src={project.posterImage}
               alt={project.posterImage.replace('/', '')}
               fill
-              className="object-cover"
+              className="object-cover z-10"
               sizes="(max-width: 768px) 100vw, 35vw"
               referrerPolicy="no-referrer"
             />
@@ -54,8 +56,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </div>
 
         {/* Info Column */}
-        <div className="w-full md:w-[65%] flex flex-col pt-2 md:pt-8">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 mb-6">
+        <div className="w-full md:w-[60%] lg:w-[65%] flex flex-col pt-2 md:pt-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 mb-4 sm:mb-6">
             {project.title}
           </h1>
 
@@ -94,15 +96,16 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       {/* Gallery Section */}
       {project.gallery && project.gallery.length > 0 && (
         <div className="mt-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             {project.gallery.map((image, i) => (
               <div key={i} className="flex flex-col items-center gap-4">
-                 <div className="relative w-full aspect-video bg-neutral-100 overflow-hidden">
+                 <div className="relative w-full aspect-video bg-neutral-100 overflow-hidden flex items-center justify-center p-4 text-center">
+                  <span className="text-neutral-400 font-mono text-sm absolute z-0">{image.replace('/', '')}</span>
                   <Image
                     src={image}
                     alt={image.replace('/', '')}
                     fill
-                    className="object-cover"
+                    className="object-cover z-10"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     referrerPolicy="no-referrer"
                   />
