@@ -75,7 +75,7 @@ export const projects = [
     slug: 'thames',
     title: 'THAMES',
     heroImage: '/images/thames-banner-image.png',
-    posterImage: '/images/thames-poster.png',
+    posterImage: '/images/Rectangle 8@2x.png',
     logoImage: '/images/THAMES 1@2x.png',
     logoClassName: '!top-1/2',
     details: {
