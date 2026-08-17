@@ -53,7 +53,7 @@ export const projects = [
     heroImage: '/images/seasonlings-hero.png',
     posterImage: '/images/seasonlings-poster.png',
     logoImage: '/images/seasonlings-poster-banner-text.png',
-    logoClassName: '-mt-12',
+    logoClassName: '-mt-11',
     details: {
       Episodes: '7 Episodes',
       Status: 'In development',
@@ -76,6 +76,7 @@ export const projects = [
     title: 'THAMES',
     heroImage: '/images/thames-hero.png',
     posterImage: '/images/thames-poster.png',
+    logoImage: '/images/THAMES 1@2x.png',
     details: {
       'Running Time': '95 minutes',
       Status: 'In development',
