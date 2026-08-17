@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { projects } from '@/lib/data';
 import { Metadata } from 'next';
+import GalleryModal from '@/components/GalleryModal';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -178,42 +179,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
         {/* Gallery Section */}
         {project.gallery && project.gallery.length > 0 && (
-          <section className="mt-8" aria-label={`${project.title} Gallery`}>
-            <div className={`grid grid-cols-1 ${project.gallery.length > 1 ? 'sm:grid-cols-2' : ''} gap-4 sm:gap-6 md:gap-8`}>
-              {project.gallery.map((image, i) => (
-                <figure key={i} className="flex flex-col items-center gap-4">
-                  <div className="relative w-full aspect-video bg-neutral-100 overflow-hidden flex items-center justify-center p-4 text-center rounded-sm">
-                    <span className="text-neutral-400 font-mono text-sm absolute z-0">
-                      {image.replace('/images/', '').replace('/', '')}
-                    </span>
-                    <Image
-                      src={image}
-                      alt={`${project.title} - Gallery Still ${i + 1}`}
-                      fill
-                      className="object-cover z-10"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      referrerPolicy="no-referrer"
-                    />
-                    {/* Optional Gallery Logo Overlay (first image only) */}
-                    {i === 0 && project.galleryLogoImage && (
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[90%] md:w-[80%] max-w-[600px]">
-                        <Image
-                          src={project.galleryLogoImage}
-                          alt={`${project.title} Gallery Logo Overlay`}
-                          width={600}
-                          height={200}
-                          className="w-full h-auto object-contain drop-shadow-2xl"
-                        />
-                      </div>
-                    )}
-                  </div>
-                  <figcaption className="text-xs text-neutral-500 uppercase tracking-widest font-medium">
-                    {i === 0 && project.slug === 'seasonlings' ? 'Watch the Official Teaser' : 'Gallery'}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-          </section>
+          <GalleryModal
+            images={project.gallery}
+            title={project.title}
+            galleryLogoImage={project.galleryLogoImage}
+          />
         )}
       </article>
     </>
