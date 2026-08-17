@@ -167,7 +167,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         {/* Gallery Section */}
         {project.gallery && project.gallery.length > 0 && (
           <section className="mt-8" aria-label={`${project.title} Gallery`}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+            <div className={`grid grid-cols-1 ${project.gallery.length > 1 ? 'sm:grid-cols-2' : ''} gap-4 sm:gap-6 md:gap-8`}>
               {project.gallery.map((image, i) => (
                 <figure key={i} className="flex flex-col items-center gap-4">
                   <div className="relative w-full aspect-video bg-neutral-100 overflow-hidden flex items-center justify-center p-4 text-center rounded-sm">

@@ -43,7 +43,6 @@ export const projects = [
     },
     gallery: [
       '/images/new-age-gallery-1.png',
-      '/images/new-age-gallery-2.png',
     ],
   },
   {
