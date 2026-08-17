@@ -122,6 +122,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 priority
                 referrerPolicy="no-referrer"
               />
+              {/* Optional Poster Logo Overlay */}
+              {project.posterLogoImage && (
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[80%] max-w-[300px]">
+                  <Image
+                    src={project.posterLogoImage}
+                    alt={`${project.title} Poster Logo Overlay`}
+                    width={500}
+                    height={200}
+                    className="w-full h-auto object-contain drop-shadow-2xl"
+                  />
+                </div>
+              )}
             </div>
           </div>
 
