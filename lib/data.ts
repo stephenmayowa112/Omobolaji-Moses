@@ -28,6 +28,7 @@ export const projects = [
     title: 'New Age',
     heroImage: '/images/new-age-hero.png',
     posterImage: '/images/new-age-poster.png',
+    logoImage: '/images/NewAge-banner-text.png',
     details: {
       Runtime: '15 minutes',
       Status: 'In Production',
