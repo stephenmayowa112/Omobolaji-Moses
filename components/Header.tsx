@@ -97,14 +97,14 @@ export default function Header() {
 
           <Link 
             href="/about" 
-            className="uppercase hover:text-neutral-600 transition-colors pb-2 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 outline-none rounded-sm"
+            className="uppercase hover:text-neutral-600 transition-colors py-2 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 outline-none rounded-sm"
           >
             About
           </Link>
 
           <Link 
             href="/work/remember-me" 
-            className="uppercase hover:text-neutral-600 transition-colors pb-2 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 outline-none rounded-sm"
+            className="uppercase hover:text-neutral-600 transition-colors py-2 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 outline-none rounded-sm"
           >
             Remember Me
           </Link>
