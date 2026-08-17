@@ -4,6 +4,7 @@ export const projects = [
     title: 'Remember Me',
     heroImage: '/images/remember-me-hero.png',
     posterImage: '/images/remember-me-poster.png',
+    logoImage: '/images/Remember-me.png',
     details: {
       Runtime: '6 minutes',
       'Release Date': '10th November 2026',
