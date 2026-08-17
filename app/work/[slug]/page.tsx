@@ -194,6 +194,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                       sizes="(max-width: 768px) 100vw, 50vw"
                       referrerPolicy="no-referrer"
                     />
+                    {/* Optional Gallery Logo Overlay */}
+                    {project.galleryLogoImage && (
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[80%] max-w-[400px]">
+                        <Image
+                          src={project.galleryLogoImage}
+                          alt={`${project.title} Gallery Logo Overlay`}
+                          width={600}
+                          height={200}
+                          className="w-full h-auto object-contain drop-shadow-2xl"
+                        />
+                      </div>
+                    )}
                   </div>
                   <figcaption className="text-xs text-neutral-500 uppercase tracking-widest font-medium">
                     {i === 0 && project.slug === 'seasonlings' ? 'Watch the Official Teaser' : 'Gallery'}

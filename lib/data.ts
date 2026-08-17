@@ -95,6 +95,7 @@ export const projects = [
     gallery: [
       '/images/thames-still1.png',
     ],
+    galleryLogoImage: '/images/THAMES 1@2x.png',
   },
 ];
 
