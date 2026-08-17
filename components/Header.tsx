@@ -34,7 +34,7 @@ export default function Header() {
         {/* Logo */}
         <Link 
           href="/" 
-          className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 outline-none rounded-sm"
+          className="text-2xl sm:text-3xl md:text-4xl font-logo font-semibold tracking-tight focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 outline-none rounded-sm"
           aria-label="Omobolaji Moses Home"
         >
           Omobolaji Moses
@@ -123,7 +123,7 @@ export default function Header() {
         <div className="flex justify-between items-center py-6 px-4 sm:px-6 border-b border-neutral-100">
           <Link 
             href="/" 
-            className="text-2xl sm:text-3xl tracking-tight font-semibold"
+            className="text-2xl sm:text-3xl tracking-tight font-logo font-semibold"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Omobolaji Moses

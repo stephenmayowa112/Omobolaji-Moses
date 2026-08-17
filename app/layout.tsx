@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-poppins',
   display: 'swap',
 });
 
@@ -99,9 +100,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={poppins.variable}>
       <body
-        className={`${poppins.className} min-h-screen flex flex-col bg-white text-black antialiased selection:bg-neutral-200`}
+        className="min-h-screen flex flex-col bg-white text-black font-sans antialiased selection:bg-neutral-200"
         suppressHydrationWarning
       >
         {/* Skip Link for Keyboard & Screen Reader Accessibility */}
