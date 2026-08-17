@@ -1,17 +1,51 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { projects } from '@/lib/data';
+import { Metadata } from 'next';
 
-// Optional: for static generation if needed later
-// export function generateStaticParams() {
-//   return projects.map((p) => ({ slug: p.slug }));
-// }
-
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
-  if (!project) return { title: 'Not Found' };
-  return { title: `${project.title} | Omobolaji Moses` };
+  
+  if (!project) {
+    return {
+      title: 'Project Not Found',
+    };
+  }
+
+  const title = `${project.title} | Omobolaji Moses`;
+  const description = project.description[0] || `Explore ${project.title}, directed by Omobolaji Moses.`;
+  const shareImage = project.heroImage || project.posterImage;
+  const url = `https://omobolajimoses.com/work/${project.slug}`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      type: 'article',
+      siteName: 'Omobolaji Moses Portfolio',
+      images: [
+        {
+          url: shareImage,
+          width: 1200,
+          height: 630,
+          alt: `${project.title} Banner`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [shareImage],
+    },
+    alternates: {
+      canonical: url,
+    },
+  };
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -22,102 +56,129 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     notFound();
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Movie',
+    name: project.title,
+    description: project.description.join(' '),
+    director: {
+      '@type': 'Person',
+      name: 'Omobolaji Peter Moses',
+    },
+    image: `https://omobolajimoses.com${project.posterImage}`,
+    url: `https://omobolajimoses.com/work/${project.slug}`,
+    genre: project.details.Genre || 'Animated Film',
+  };
+
   return (
-    <div className="w-full flex flex-col gap-8 sm:gap-12 md:gap-16 pb-8 sm:pb-12">
-      {/* Hero Banner */}
-      <div className="relative w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px] bg-neutral-900 overflow-hidden flex items-center justify-center p-4 text-center">
-        <span className="text-neutral-500 font-mono text-sm absolute z-0">{project.heroImage.replace('/', '')}</span>
-        <Image
-          src={project.heroImage}
-          alt={project.heroImage.replace('/', '')}
-          fill
-          className="object-cover opacity-80 z-10"
-          priority
-          sizes="100vw"
-          referrerPolicy="no-referrer"
-        />
-        {/* We can overlay a title here if we want, but mockups just show the image with title embedded in image. We'll leave it as just image. */}
-      </div>
-
-      <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-12 lg:gap-16">
-        {/* Poster Column */}
-        <div className="w-full md:w-[40%] lg:w-[35%] shrink-0">
-          <div className="relative w-full aspect-[2/3] bg-neutral-100 overflow-hidden shadow-lg flex items-center justify-center p-4 text-center">
-            <span className="text-neutral-400 font-mono text-sm absolute z-0">{project.posterImage.replace('/', '')}</span>
-            <Image
-              src={project.posterImage}
-              alt={project.posterImage.replace('/', '')}
-              fill
-              className="object-cover z-10"
-              sizes="(max-width: 768px) 100vw, 35vw"
-              referrerPolicy="no-referrer"
-            />
-          </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <article className="w-full flex flex-col gap-8 sm:gap-12 md:gap-16 pb-8 sm:pb-12">
+        {/* Hero Banner */}
+        <div className="relative w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px] bg-neutral-900 overflow-hidden flex items-center justify-center p-4 text-center rounded-sm">
+          <span className="text-neutral-500 font-mono text-sm absolute z-0">
+            {project.heroImage.replace('/images/', '').replace('/', '')}
+          </span>
+          <Image
+            src={project.heroImage}
+            alt={`${project.title} - Official Hero Banner`}
+            fill
+            className="object-cover opacity-80 z-10"
+            priority
+            sizes="100vw"
+            referrerPolicy="no-referrer"
+          />
         </div>
 
-        {/* Info Column */}
-        <div className="w-full md:w-[60%] lg:w-[65%] flex flex-col pt-2 md:pt-8">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 mb-4 sm:mb-6">
-            {project.title}
-          </h1>
-
-          {/* Details */}
-          <div className="flex flex-col gap-1 text-sm md:text-base text-neutral-600 mb-8">
-            {Object.entries(project.details).map(([key, value]) => (
-              <p key={key}>
-                {key}: {value}
-              </p>
-            ))}
+        <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-12 lg:gap-16">
+          {/* Poster Column */}
+          <div className="w-full md:w-[40%] lg:w-[35%] shrink-0">
+            <div className="relative w-full aspect-[2/3] bg-neutral-100 overflow-hidden shadow-lg flex items-center justify-center p-4 text-center rounded-sm">
+              <span className="text-neutral-400 font-mono text-sm absolute z-0">
+                {project.posterImage.replace('/images/', '').replace('/', '')}
+              </span>
+              <Image
+                src={project.posterImage}
+                alt={`${project.title} - Movie Poster`}
+                fill
+                className="object-cover z-10"
+                sizes="(max-width: 768px) 100vw, 35vw"
+                priority
+                referrerPolicy="no-referrer"
+              />
+            </div>
           </div>
 
-          {/* Description */}
-          {project.descriptionHeading && (
-            <h2 className="text-xl font-bold mb-4">{project.descriptionHeading}</h2>
-          )}
-          
-          <div className="flex flex-col gap-4 text-sm md:text-base text-neutral-800 leading-relaxed mb-8">
-            {project.description.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-          </div>
+          {/* Info Column */}
+          <div className="w-full md:w-[60%] lg:w-[65%] flex flex-col pt-2 md:pt-8">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 mb-4 sm:mb-6">
+              {project.title}
+            </h1>
 
-          {/* Credits */}
-          <div className="mt-4 flex flex-col gap-4 text-sm md:text-base">
-            {Object.entries(project.credits).map(([key, value]) => (
-              <div key={key}>
-                <p className="font-bold">{key}</p>
-                <p>{value}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Gallery Section */}
-      {project.gallery && project.gallery.length > 0 && (
-        <div className="mt-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-            {project.gallery.map((image, i) => (
-              <div key={i} className="flex flex-col items-center gap-4">
-                 <div className="relative w-full aspect-video bg-neutral-100 overflow-hidden flex items-center justify-center p-4 text-center">
-                  <span className="text-neutral-400 font-mono text-sm absolute z-0">{image.replace('/', '')}</span>
-                  <Image
-                    src={image}
-                    alt={image.replace('/', '')}
-                    fill
-                    className="object-cover z-10"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    referrerPolicy="no-referrer"
-                  />
+            {/* Details */}
+            <dl className="flex flex-col gap-1 text-sm md:text-base text-neutral-600 mb-8">
+              {Object.entries(project.details).map(([key, value]) => (
+                <div key={key} className="flex gap-2">
+                  <dt className="font-semibold text-neutral-800">{key}:</dt>
+                  <dd>{value}</dd>
                 </div>
-                <span className="text-xs text-neutral-500 uppercase tracking-widest">
-                  {i === 0 && project.slug === 'seasonlings' ? 'Watch the Official Teaser' : 'Gallery'}
-                </span>
-              </div>
-            ))}
+              ))}
+            </dl>
+
+            {/* Description */}
+            {project.descriptionHeading && (
+              <h2 className="text-xl font-bold mb-4">{project.descriptionHeading}</h2>
+            )}
+            
+            <div className="flex flex-col gap-4 text-sm md:text-base text-neutral-800 leading-relaxed mb-8">
+              {project.description.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
+
+            {/* Credits */}
+            <dl className="mt-4 flex flex-col gap-4 text-sm md:text-base">
+              {Object.entries(project.credits).map(([key, value]) => (
+                <div key={key}>
+                  <dt className="font-bold text-neutral-900">{key}</dt>
+                  <dd className="text-neutral-700">{value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
-      )}
-    </div>
+
+        {/* Gallery Section */}
+        {project.gallery && project.gallery.length > 0 && (
+          <section className="mt-8" aria-label={`${project.title} Gallery`}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+              {project.gallery.map((image, i) => (
+                <figure key={i} className="flex flex-col items-center gap-4">
+                  <div className="relative w-full aspect-video bg-neutral-100 overflow-hidden flex items-center justify-center p-4 text-center rounded-sm">
+                    <span className="text-neutral-400 font-mono text-sm absolute z-0">
+                      {image.replace('/images/', '').replace('/', '')}
+                    </span>
+                    <Image
+                      src={image}
+                      alt={`${project.title} - Gallery Still ${i + 1}`}
+                      fill
+                      className="object-cover z-10"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <figcaption className="text-xs text-neutral-500 uppercase tracking-widest font-medium">
+                    {i === 0 && project.slug === 'seasonlings' ? 'Watch the Official Teaser' : 'Gallery'}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        )}
+      </article>
+    </>
   );
 }
