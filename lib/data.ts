@@ -29,6 +29,7 @@ export const projects = [
     heroImage: '/images/new-age-hero.png',
     posterImage: '/images/new-age-poster.png',
     logoImage: '/images/NewAge-banner-text.png',
+    logoClassName: 'scale-[0.80]',
     details: {
       Runtime: '15 minutes',
       Status: 'In Production',
