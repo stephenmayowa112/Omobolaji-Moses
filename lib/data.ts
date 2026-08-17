@@ -85,8 +85,8 @@ export const projects = [
       Genre: '3D Animated Fantasy Adventure',
     },
     description: [
-      "THAMES is an epic British 3D animated fantasy adventure about a lonely twelve-year-old girl who discovers that the River Thames is alive—and that an ancient civilization has existed beneath London for thousands of years.",
-      "Blending spectacle, humour, mystery and heartfelt emotion, the film explores family, belonging, grief and humanity's relationship with nature. At its heart is the unlikely friendship between Mel, a troubled London girl, and Finn, a mischievous creature from beneath the river.",
+      "THAMES is an epic British 3D animated fantasy adventure about a lonely twelve-year-old boy who discovers that the River Thames is alive—and that an ancient civilization has existed beneath London for thousands of years.",
+      "Blending spectacle, humour, mystery and heartfelt emotion, the film explores family, belonging, grief and humanity's relationship with nature. At its heart is the unlikely friendship between Leo, a troubled London boy, and Finn, a mischievous creature from beneath the river.",
       "Set against the recognizable streets, bridges and waterways of modern London, THAMES transforms one of Britain's greatest landmarks into the gateway to an extraordinary hidden world.",
     ],
     credits: {
