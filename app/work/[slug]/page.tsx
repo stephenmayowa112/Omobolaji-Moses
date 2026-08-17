@@ -196,7 +196,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     />
                     {/* Optional Gallery Logo Overlay */}
                     {project.galleryLogoImage && (
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[80%] max-w-[400px]">
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[90%] md:w-[80%] max-w-[600px]">
                         <Image
                           src={project.galleryLogoImage}
                           alt={`${project.title} Gallery Logo Overlay`}
