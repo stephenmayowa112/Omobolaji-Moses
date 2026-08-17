@@ -78,7 +78,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       />
       <article className="w-full flex flex-col gap-8 sm:gap-12 md:gap-16 pb-8 sm:pb-12">
         {/* Hero Banner */}
-        <div className="relative w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px] bg-neutral-900 overflow-hidden flex items-center justify-center p-4 text-center rounded-sm">
+        <div className="relative w-full aspect-[1691/606] max-h-[606px] bg-neutral-900 overflow-hidden flex items-center justify-center p-4 text-center rounded-sm">
           <span className="text-neutral-500 font-mono text-sm absolute z-0">
             {project.heroImage.replace('/images/', '').replace('/', '')}
           </span>
@@ -86,7 +86,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             src={project.heroImage}
             alt={`${project.title} - Official Hero Banner`}
             fill
-            className="object-cover opacity-80 z-10"
+            className="object-cover opacity-100 z-10"
             priority
             sizes="100vw"
             referrerPolicy="no-referrer"
