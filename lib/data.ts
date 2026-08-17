@@ -94,6 +94,11 @@ export const projects = [
     },
     gallery: [
       '/images/thames-still1.png',
+      '/images/thames-galleria1.jpeg',
+      '/images/thames-galleria2.jpeg',
+      '/images/thames-galleria3.jpeg',
+      '/images/thames-galleria4.jpeg',
+      '/images/thames-galleria5.jpeg',
     ],
     galleryLogoImage: '/images/THAMES 1@2x.png',
   },

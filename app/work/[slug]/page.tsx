@@ -194,8 +194,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                       sizes="(max-width: 768px) 100vw, 50vw"
                       referrerPolicy="no-referrer"
                     />
-                    {/* Optional Gallery Logo Overlay */}
-                    {project.galleryLogoImage && (
+                    {/* Optional Gallery Logo Overlay (first image only) */}
+                    {i === 0 && project.galleryLogoImage && (
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[90%] md:w-[80%] max-w-[600px]">
                         <Image
                           src={project.galleryLogoImage}
