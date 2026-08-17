@@ -93,7 +93,7 @@ export const projects = [
       'Directed By': 'Omobolaji Peter Moses',
     },
     gallery: [
-      '/images/thames-gallery-1.png',
+      '/images/thames-still1.png',
     ],
   },
 ];
